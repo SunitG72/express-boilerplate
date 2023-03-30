@@ -1,4 +1,4 @@
-const readline = require('readline-sync');
+
 
 var all_characters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~'];
 
@@ -194,7 +194,7 @@ while (pt6 != range5) {
 const keyS =  {'!': 'D2[sY6', '"': 'h(3%=z', '#': 'q/Bke', '$': 'cM?=', '%': '}~', '&': 'f[', "'": 'REL', '(': ']:[s', ')': 'f-3ew', '*': 'Liv83Z', '+': '(J1', ',': '[Ze$', '-': '4(am!', '.': 'U)EZvc', '/': 'NsX]iM', '0': 'UhSp', '1': '^Z', '2': 'U0', '3': 'csO', '4': 'X%Wn', '5': '(D!]u', '6': '}R5jk*', '7': 'GA%QMr', '8': '/Y$0', '9': 'T[H4m', ':': '#5?B~', ';': 'x3;r', '<': 'S@', '=': 'gs', '>': 'w%V', '?': 'oY/!', '@': 'gR}5D', 'A': 'Pq$#', 'B': ':W', 'C': 'A%', 'D': 'gZQ', 'E': 'lW{_', 'F': ']zroc', 'G': 'Xd3Q80', 'H': 'osH&[k', 'I': 'h#(Nr', 'J': 'KmN.', 'K': '(<5M^Y', 'L': '[K-9jb', 'M': '!Y:tO', 'N': '2nvZ', 'O': '-a', 'P': 'qk', 'Q': 'k%5', 'R': 'eNb}', 'S': '_ZN$3', 'T': '1@Vg8y', 'U': '~{l&`8', 'V': '&uKhe', 'W': '%e-oF', 'X': '/%Cyl|', 'Y': 'Rik9!>', 'Z': '>;R6I', '[': 'co', '\\': '*4-', ']': 'GH#_', '^': 'Nn7)J', '_': ':Vx(MF', '`': '_bW}V7', 'a': 'WfA9', 'b': '=3', 'c': '!F', 'd': '7;e', 'e': '~;=m', 'f': '-U$ZM', 'g': 'Ho]`3n', 'h': '=~,9Z-', 'i': ')bGO;', 'j': 'Y?|R', 'k': '`2n', 'l': '/*', 'm': 'Q%i?B', 'n': 'S!J<', 'o': 'HR', 'p': 'w?', 'q': 's7[', 'r': '{Sjh', 's': 'QqAG6', 't': ')1Wf;~', 'u': 'W2fBzj', 'v': '}lC]/', 'w': 'yX,3', 'x': '!OF', 'y': 'is0Y{u', 'z': 'ZL*{q', '{': 'k!87X', '|': '8S=+', '}': 'D;', '~': 'su'}
 
 
-function encrypt(password) {
+export function encrypt(password) {
   let y = "";
   let list = [];
   for (let i = 0; i < password.length; i++) {
@@ -210,11 +210,9 @@ function encrypt(password) {
   return y;
 }
 
-const password = readline.question("Enter the password:  ");
-const encryptedPassword = encrypt(password);
-console.log("Encrypted password: ", encryptedPassword);
 
-function decrypt(password) {
+
+export function decrypt(password) {
   let y = "";
   while (password !== "") {
     for (let k = 1; k < 7; k++) {
@@ -228,6 +226,3 @@ function decrypt(password) {
   }
   return y;
 }
-
-const decryptedPassword = decrypt(encryptedPassword);
-console.log("Decrypted password: ", decryptedPassword);
